@@ -72,13 +72,21 @@ const getApi = async () => {
     console.log(data.result);
     main.innerHTML = `
           <div class="link">
-    <div class="left_link"><a target="_blank" href="">${short_link}</a></div>
+    <div class="left_link"><a target="_blank" href="${input.value}">${short_link}</a></div>
     <button onclick="myCopy()" class="copy_link">Copy</button>
   </div> `;
   } catch (error) {
     console.log(error);
   }
 };
+input.addEventListener("keydown", (e) => {
+  if (e.code === "Enter") {
+    btn.click();
+  }
+});
+
+
+
 
 btn.addEventListener("click", () => {
     
